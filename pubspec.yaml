@@ -13,24 +13,35 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   # Database
-  sqflite: ^2.4.2
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
 
   # UI
   flutter_slidable: ^4.0.0
   animated_text_kit: ^4.2.3
   auto_size_text: ^3.0.0
   flex_color_scheme: ^8.2.0
+  google_fonts: ^6.2.1
+
+  # Syncfusion
+  syncfusion_flutter_calendar: ^29.1.37
+  syncfusion_flutter_core: ^29.1.37
 
   # System
   flutter_native_splash: ^2.4.6
   flutter_launcher_icons: ^0.14.3
-  flutter_local_notifications: ^19.0.0
+  # flutter_local_notifications: ^19.0.0
+
+  # Others
+  intl: ^0.20.2
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
 
 flutter:
   uses-material-design: true
