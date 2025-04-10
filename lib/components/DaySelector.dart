@@ -35,8 +35,8 @@ class _DaySelectorState extends State<DaySelector> {
               isSelected: isSelected,
               onTap: () {
                 setState(() {
-                  widget.onSelected(selectedDate);
                   selectedDate = date;
+                  widget.onSelected(selectedDate);
                 });
               },
             );

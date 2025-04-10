@@ -18,6 +18,10 @@ class TaskRepositoryImpl implements TaskRepository {
       description: "Ir para faculdade",
       date: DateTime.now().add(Duration(hours: 1)),
     ),
+    TaskModel(
+      description: "Ir para faculdade",
+      date: DateTime.now().add(Duration(hours: 1)),
+    ),
   ];
 
   @override

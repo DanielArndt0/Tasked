@@ -17,18 +17,21 @@ class ScheduleView extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      separatorBuilder: (context, index) => SizedBox(height: 8),
+      separatorBuilder: (context, index) => SizedBox(height: 20),
       itemCount: 24,
       itemBuilder: (context, index) {
         final isExpired = DateTime.now().hour > index;
-        // final isCurrentHour = DateTime.now().hour == index;
+        // final currentHour = DateTime.now().hour == index;
+
+        final tasks =
+            dayTasks.where((task) => task.date.hour == index).toList();
 
         return HourCard(
           isExpired: isExpired,
           hour: index,
           onHour: () {
-            return ScheduleCard(
-              task: TaskModel(description: 'description', date: DateTime.now()),
+            return Column(
+              children: [...tasks.map((task) => ScheduleCard(task: task))],
             );
           },
         );

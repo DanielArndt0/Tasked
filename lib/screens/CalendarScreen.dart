@@ -20,13 +20,20 @@ class _CalendarScreenState extends State<CalendarScreen> {
   void initState() {
     super.initState();
     _controller = context.read<CalendarScreenController>();
+    _controller.selectedDateNotifier.value = DateTime.now();
+    _controller.refreshDayTasks();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: AppBarTitle(name: "Calendar", date: DateTime.now()),
+        title: ValueListenableBuilder(
+          valueListenable: _controller.selectedDateNotifier,
+          builder:
+              (context, date, child) =>
+                  AppBarTitle(name: "Calendar", date: date),
+        ),
         backgroundColor: AppColors.appBar,
       ),
       body: SingleChildScrollView(
