@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 
 ThemeData lightModeTheme = FlexThemeData.light(
   scheme: FlexScheme.dellGenoa,
+  fontFamily: 'Inter',
   // textTheme: GoogleFonts.interTextTheme(),
 );
 
 ThemeData darkModeTheme = FlexThemeData.dark(
   scheme: FlexScheme.dellGenoa,
+  fontFamily: 'Inter',
   // textTheme: GoogleFonts.interTextTheme(),
 );
