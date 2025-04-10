@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:tasked/components/WeekCard.dart';
 
 class DaySelector extends StatefulWidget {
-  const DaySelector({super.key});
+  final void Function(DateTime selectedDate) onSelected;
+  const DaySelector({super.key, required this.onSelected});
 
   @override
   State<DaySelector> createState() => _DaySelectorState();
 }
 
 class _DaySelectorState extends State<DaySelector> {
-  DateTime? selectedDate;
+  DateTime selectedDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +26,16 @@ class _DaySelectorState extends State<DaySelector> {
           itemBuilder: (context, index) {
             final date = DateTime.now().add(Duration(days: index));
             final isSelected =
-                selectedDate != null &&
-                selectedDate!.day == date.day &&
-                selectedDate!.month == date.month &&
-                selectedDate!.year == date.year;
+                selectedDate.day == date.day &&
+                selectedDate.month == date.month &&
+                selectedDate.year == date.year;
 
             return WeekCard(
               date: DateTime.now().add(Duration(days: index)),
               isSelected: isSelected,
               onTap: () {
                 setState(() {
+                  widget.onSelected(selectedDate);
                   selectedDate = date;
                 });
               },
