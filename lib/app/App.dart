@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Tasked',
       themeMode: isDarkTheme ? ThemeMode.dark : ThemeMode.light,
       theme: lightModeTheme,
-      darkTheme: darkModeTheme,
+      darkTheme: ThemeData.dark(),
       routes: RouteHandler.routes,
       initialRoute: NamedRoutes.home,
       navigatorKey: _navigator,

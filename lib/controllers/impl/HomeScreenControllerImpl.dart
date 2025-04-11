@@ -8,6 +8,6 @@ class HomeScreenControllerImpl implements HomeScreenController {
 
   @override
   void fabPressed() {
-    navigationController.goToCalendar();
+    navigationController.goToNewTask();
   }
 }

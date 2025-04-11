@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tasked/app/AppColors.dart';
 import 'package:tasked/components/AppBarTitle.dart';
 import 'package:tasked/components/TaskCard.dart';
 import 'package:tasked/controllers/HomeScreenController.dart';
@@ -28,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: AppBarTitle(name: "Today", date: DateTime.now()),
-        backgroundColor: AppColors.appBar,
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 50, left: 50, right: 50),

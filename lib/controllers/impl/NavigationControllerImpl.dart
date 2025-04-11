@@ -15,4 +15,12 @@ class NavigationControllerImpl implements NavigationController {
       transition: PageTransitionType.rightToLeft,
     );
   }
+
+  @override
+  Future<void> goToNewTask() async {
+    navigationService.navigateTo(
+      routeName: NamedRoutes.newTask,
+      transition: PageTransitionType.rightToLeft,
+    );
+  }
 }

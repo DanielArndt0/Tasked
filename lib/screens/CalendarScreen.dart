@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tasked/app/AppColors.dart';
 import 'package:tasked/components/AppBarTitle.dart';
 import 'package:tasked/components/DaySelector.dart';
 import 'package:tasked/components/ScheduleView.dart';
@@ -34,7 +33,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
               (context, date, child) =>
                   AppBarTitle(name: "Calendar", date: date),
         ),
-        backgroundColor: AppColors.appBar,
       ),
       body: SingleChildScrollView(
         child: Column(
