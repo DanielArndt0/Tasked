@@ -43,7 +43,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                   ),
                 ],
               ),
-
             ],
           ),
         ),

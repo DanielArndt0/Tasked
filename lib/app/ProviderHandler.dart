@@ -20,11 +20,13 @@ MultiProvider providerHandler = MultiProvider(
           (context, navigationService, previous) =>
               NavigationControllerImpl(navigationService: navigationService),
     ),
-    ProxyProvider<NavigationController, HomeScreenController>(
+    ProxyProvider2<NavigationController, TaskRepository, HomeScreenController>(
       update:
-          (context, navigationController, previous) => HomeScreenControllerImpl(
-            navigationController: navigationController,
-          ),
+          (context, navigationController, taskRepository, previous) =>
+              HomeScreenControllerImpl(
+                navigationController: navigationController,
+                taskRepository: taskRepository,
+              ),
     ),
     ProxyProvider<TaskRepository, CalendarScreenController>(
       update:

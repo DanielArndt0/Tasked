@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:tasked/models/TagModel.dart';
 import 'package:tasked/models/TaskModel.dart';
 import 'package:tasked/repositories/TaskRepository.dart';
 
@@ -7,20 +9,19 @@ class TaskRepositoryImpl implements TaskRepository {
 
   final List<TaskModel> _list = [
     TaskModel(
-      description: "Ir ao mercado",
+      description: "Ir ao trabalho",
       date: DateTime.now().add(Duration(hours: 3)),
+      tags: [TagModel(label: 'Work', color: Colors.red)],
     ),
     TaskModel(
       description: "Ir ao médico",
       date: DateTime.now().add(Duration(days: 2)),
+      tags: [TagModel(label: 'Health')],
     ),
     TaskModel(
       description: "Ir para faculdade",
       date: DateTime.now().add(Duration(hours: 1)),
-    ),
-    TaskModel(
-      description: "Ir para faculdade",
-      date: DateTime.now().add(Duration(hours: 1)),
+      tags: [TagModel(label: 'School', color: Colors.orange)],
     ),
   ];
 
@@ -45,6 +46,13 @@ class TaskRepositoryImpl implements TaskRepository {
       return element.date.day == date.day &&
           element.date.month == date.month &&
           element.date.year == date.year;
+    }).toList();
+  }
+
+  @override
+  List<TaskModel> getAllByTag(TagModel tag) {
+    return _list.where((task) {
+      return task.tags?.contains(tag) ?? false;
     }).toList();
   }
 }
